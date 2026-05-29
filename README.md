@@ -1,4 +1,3 @@
-```md
 # Japanese Association at Iowa State University 🇯🇵
 
 Welcome to the official GitHub repository for the Japanese Association at Iowa State University website!
@@ -24,5 +23,4 @@ More features, updates, and improvements are coming soon! Stay tuned!
 Contributions, suggestions, and feedback are always welcome!
 
 Thank you for visiting our repository!
-```
 
