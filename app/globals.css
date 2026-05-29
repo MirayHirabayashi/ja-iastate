@@ -1,26 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Brand design system ──────────────────────────────────────────
+   Modern-minimalist "washi paper" base with a cardinal-red hero
+   accent (ISU Cardinal + Japanese flag/torii red are the same hue),
+   warm gold secondary, and a soft sakura tint for highlights.        */
+@theme {
+  --color-paper: #faf8f5; /* warm off-white background      */
+  --color-paper-2: #f3eee7; /* slightly deeper paper for bands */
+  --color-ink: #1a1a1a; /* near-black for text            */
+  --color-cardinal: #c8102e; /* primary accent (ISU + Japan)   */
+  --color-cardinal-700: #a00d25; /* hover / pressed                */
+  --color-gold: #f1be48; /* secondary accent               */
+  --color-slate: #5a5a5a; /* muted text                     */
+  --color-sakura: #f7cedc; /* soft highlight                 */
+
+  --font-sans: var(--font-noto-sans-jp), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif-jp), ui-serif, Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem; /* offset for the sticky header */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
 }
