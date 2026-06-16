@@ -82,6 +82,7 @@ function SectionHeading({ en, jp }: { en: string; jp: string }) {
 
 const navLinks = [
   { href: "#about", en: "About", jp: "私たちについて" },
+  { href: "#team", en: "Team", jp: "役員紹介" },
   { href: "#events", en: "Events", jp: "イベント" },
   { href: "#outreach", en: "Connect", jp: "交流" },
   { href: "#contact", en: "Contact", jp: "お問い合わせ" },
@@ -108,6 +109,67 @@ const events = [
     jp: "節分祭",
     blurb: "Ring in spring with traditional games and seasonal treats.",
     tint: "from-gold/25 to-cardinal/10",
+  },
+];
+
+/* Board members. Photos are placeholder tiles for now (no images yet);
+   drop a real headshot in by adding an `img` field later. */
+const team = [
+  {
+    name: "Member Name",
+    role: "President",
+    jp: "会長",
+    year: "Senior",
+    major: "Major TBD",
+    tint: "from-cardinal/15 to-gold/20",
+  },
+  {
+    name: "Member Name",
+    role: "Vice President",
+    jp: "副会長",
+    year: "Junior",
+    major: "Major TBD",
+    tint: "from-sakura/40 to-paper-2",
+  },
+  {
+    name: "Member Name",
+    role: "Secretary",
+    jp: "書記",
+    year: "Sophomore",
+    major: "Major TBD",
+    tint: "from-gold/25 to-cardinal/10",
+  },
+  {
+    name: "Member Name",
+    role: "Treasurer",
+    jp: "会計",
+    year: "Junior",
+    major: "Major TBD",
+    tint: "from-cardinal/20 to-gold/20",
+  },
+  {
+    name: "Member Name",
+    role: "Events Coordinator",
+    jp: "イベント担当",
+    year: "Senior",
+    major: "Major TBD",
+    tint: "from-sakura/50 to-paper-2",
+  },
+  {
+    name: "Member Name",
+    role: "Outreach Coordinator",
+    jp: "交流担当",
+    year: "Sophomore",
+    major: "Major TBD",
+    tint: "from-gold/30 to-paper-2",
+  },
+  {
+    name: "Member Name",
+    role: "Public Relations",
+    jp: "広報担当",
+    year: "Freshman",
+    major: "Major TBD",
+    tint: "from-paper-2 to-sakura/40",
   },
 ];
 
@@ -251,6 +313,41 @@ export default function Home() {
                 ))}
               </dl>
             </div>
+          </div>
+        </section>
+
+        {/* ── Meet the Team ─────────────────────────────────────── */}
+        <section id="team" className="mx-auto max-w-6xl px-6 py-24">
+          <SectionHeading en="Meet the Team" jp="役員紹介" />
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate">
+            The student officers who keep the club running. Placeholder text for
+            now — bios and photos coming soon. 役員のプロフィールは近日公開予定です。
+          </p>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {team.map((m, i) => (
+              <article
+                key={`${m.role}-${i}`}
+                className="overflow-hidden rounded-2xl border border-ink/5 bg-white/70"
+              >
+                {/* Placeholder headshot — swap for a real image later. */}
+                <div
+                  className={`flex aspect-square items-center justify-center bg-gradient-to-br ${m.tint}`}
+                >
+                  <span className="rounded-lg bg-paper/85 px-2.5 py-1 text-xs font-medium text-ink/60">
+                    Photo
+                  </span>
+                </div>
+                <div className="p-5">
+                  <p className="text-sm font-medium text-cardinal">{m.role}</p>
+                  <p className="text-xs text-slate">{m.jp}</p>
+                  <h3 className="mt-2 font-serif text-lg font-semibold">
+                    {m.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-slate">{m.year}</p>
+                  <p className="text-sm text-slate">{m.major}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </section>
 
